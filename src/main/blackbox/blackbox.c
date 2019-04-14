@@ -1353,6 +1353,11 @@ static bool blackboxWriteSysinfo(void)
                                                                             gyroConfig()->gyro_soft_notch_hz_2);
         BLACKBOX_PRINT_HEADER_LINE("gyro_notch_cutoff", "%d,%d",            gyroConfig()->gyro_soft_notch_cutoff_1,
                                                                             gyroConfig()->gyro_soft_notch_cutoff_2);
+        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_roll_hz", "%d",              gyroConfig()->gyro_soft_notch_roll_hz);
+        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_roll_cutoff", "%d",          gyroConfig()->gyro_soft_notch_roll_cutoff);
+        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_pitch_hz", "%d",             gyroConfig()->gyro_soft_notch_pitch_hz);
+        BLACKBOX_PRINT_HEADER_LINE("gyro_notch_pitch_cutoff", "%d",         gyroConfig()->gyro_soft_notch_pitch_cutoff);
+
 #if defined(USE_ACC)
         BLACKBOX_PRINT_HEADER_LINE("acc_lpf_hz", "%d",                 (int)(accelerometerConfig()->acc_lpf_hz * 100.0f));
         BLACKBOX_PRINT_HEADER_LINE("acc_hardware", "%d",                    accelerometerConfig()->acc_hardware);

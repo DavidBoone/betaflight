@@ -484,6 +484,12 @@ void validateAndFixGyroConfig(void)
     if (gyroConfig()->gyro_soft_notch_cutoff_2 >= gyroConfig()->gyro_soft_notch_hz_2) {
         gyroConfigMutable()->gyro_soft_notch_hz_2 = 0;
     }
+    if (gyroConfig()->gyro_soft_notch_roll_cutoff >= gyroConfig()->gyro_soft_notch_roll_hz) {
+        gyroConfigMutable()->gyro_soft_notch_roll_hz = 0;
+    }
+    if (gyroConfig()->gyro_soft_notch_pitch_cutoff >= gyroConfig()->gyro_soft_notch_pitch_hz) {
+        gyroConfigMutable()->gyro_soft_notch_pitch_hz = 0;
+    }
 #ifdef USE_DYN_LPF
     //Prevent invalid dynamic lowpass filter
     if (gyroConfig()->dyn_lpf_gyro_min_hz > gyroConfig()->dyn_lpf_gyro_max_hz) {

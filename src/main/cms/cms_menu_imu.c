@@ -434,6 +434,10 @@ static uint16_t gyroConfig_gyro_soft_notch_hz_1;
 static uint16_t gyroConfig_gyro_soft_notch_cutoff_1;
 static uint16_t gyroConfig_gyro_soft_notch_hz_2;
 static uint16_t gyroConfig_gyro_soft_notch_cutoff_2;
+static uint16_t gyroConfig_gyro_soft_notch_roll_hz;
+static uint16_t gyroConfig_gyro_soft_notch_roll_cutoff;
+static uint16_t gyroConfig_gyro_soft_notch_pitch_hz;
+static uint16_t gyroConfig_gyro_soft_notch_pitch_cutoff;
 
 static long cmsx_menuGyro_onEnter(void)
 {
@@ -443,6 +447,10 @@ static long cmsx_menuGyro_onEnter(void)
     gyroConfig_gyro_soft_notch_cutoff_1 = gyroConfig()->gyro_soft_notch_cutoff_1;
     gyroConfig_gyro_soft_notch_hz_2 = gyroConfig()->gyro_soft_notch_hz_2;
     gyroConfig_gyro_soft_notch_cutoff_2 = gyroConfig()->gyro_soft_notch_cutoff_2;
+    gyroConfig_gyro_soft_notch_roll_hz = gyroConfig()->gyro_soft_notch_roll_hz;
+    gyroConfig_gyro_soft_notch_roll_cutoff = gyroConfig()->gyro_soft_notch_roll_cutoff;
+    gyroConfig_gyro_soft_notch_pitch_hz = gyroConfig()->gyro_soft_notch_pitch_hz;
+    gyroConfig_gyro_soft_notch_pitch_cutoff = gyroConfig()->gyro_soft_notch_pitch_cutoff;
 
     return 0;
 }
@@ -457,6 +465,10 @@ static long cmsx_menuGyro_onExit(const OSD_Entry *self)
     gyroConfigMutable()->gyro_soft_notch_cutoff_1 = gyroConfig_gyro_soft_notch_cutoff_1;
     gyroConfigMutable()->gyro_soft_notch_hz_2 = gyroConfig_gyro_soft_notch_hz_2;
     gyroConfigMutable()->gyro_soft_notch_cutoff_2 = gyroConfig_gyro_soft_notch_cutoff_2;
+    gyroConfigMutable()->gyro_soft_notch_roll_hz = gyroConfig_gyro_soft_notch_roll_hz;
+    gyroConfigMutable()->gyro_soft_notch_roll_cutoff = gyroConfig_gyro_soft_notch_roll_cutoff;
+    gyroConfigMutable()->gyro_soft_notch_pitch_hz = gyroConfig_gyro_soft_notch_pitch_hz;
+    gyroConfigMutable()->gyro_soft_notch_pitch_cutoff = gyroConfig_gyro_soft_notch_pitch_cutoff;
 
     return 0;
 }
@@ -473,6 +485,10 @@ static const OSD_Entry cmsx_menuFilterGlobalEntries[] =
     { "GYRO NF1C",  OME_UINT16, NULL, &(OSD_UINT16_t) { &gyroConfig_gyro_soft_notch_cutoff_1, 0, 500, 1 }, 0 },
     { "GYRO NF2",   OME_UINT16, NULL, &(OSD_UINT16_t) { &gyroConfig_gyro_soft_notch_hz_2,     0, 500, 1 }, 0 },
     { "GYRO NF2C",  OME_UINT16, NULL, &(OSD_UINT16_t) { &gyroConfig_gyro_soft_notch_cutoff_2, 0, 500, 1 }, 0 },
+    { "GYRO NFR",   OME_UINT16, NULL, &(OSD_UINT16_t) { &gyroConfig_gyro_soft_notch_roll_hz,      0, 500, 1 }, 0 },
+    { "GYRO NFRC",  OME_UINT16, NULL, &(OSD_UINT16_t) { &gyroConfig_gyro_soft_notch_roll_cutoff,  0, 500, 1 }, 0 },
+    { "GYRO NFP",   OME_UINT16, NULL, &(OSD_UINT16_t) { &gyroConfig_gyro_soft_notch_pitch_hz,     0, 500, 1 }, 0 },
+    { "GYRO NFPC",  OME_UINT16, NULL, &(OSD_UINT16_t) { &gyroConfig_gyro_soft_notch_pitch_cutoff, 0, 500, 1 }, 0 },
 
     { "BACK", OME_Back, NULL, NULL, 0 },
     { NULL, OME_END, NULL, NULL, 0 }
