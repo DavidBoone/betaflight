@@ -51,6 +51,7 @@
 #define USE_ITERM_RELAX
 #define USE_RC_SMOOTHING_FILTER
 #define USE_TPA_MODE
+#define USE_CCM_CODE
 #endif
 
 #ifdef STM32F4
@@ -144,6 +145,7 @@
 #else
 #define DEFAULT_AUX_CHANNEL_COUNT       6
 #endif
+
 
 // Set the default cpu_overclock to the first level (108MHz) for F411
 // Helps with looptime stability as the CPU is borderline when running native gyro sampling
