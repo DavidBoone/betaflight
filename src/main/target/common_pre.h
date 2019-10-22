@@ -56,6 +56,7 @@
 #define USE_INTERPOLATED_SP
 #define USE_ABSOLUTE_CONTROL
 #define USE_THROTTLE_BOOST
+#define USE_QUAD_MIXER_ONLY
 //#define USE_VTX_TABLE
 
 #if !defined(USE_FRSKY) && !defined(USE_FLYSKY) && !defined(USE_SPEKTRUM) && !defined(USE_CRSF)
