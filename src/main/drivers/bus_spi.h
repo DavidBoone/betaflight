@@ -73,7 +73,7 @@ typedef enum {
     SPI_CLOCK_STANDARD      = 16,  //10.62500 MHz
     SPI_CLOCK_FAST          = 8,   //21.25000 MHz
     SPI_CLOCK_ULTRAFAST     = 4    //42.50000 MHz
-#elif defined(STM32F3) && defined(USE_VCP)
+#elif (defined(STM32F3) && defined(USE_VCP)) || defined(USE_OVERCLOCK)
     SPI_CLOCK_SLOW          = 128, //00.56250 MHz * 1.6
     SPI_CLOCK_STANDARD      = 8,   //04.50000 MHz * 1.6
     SPI_CLOCK_FAST          = 4,   //9.00000 MHz * 1.6
