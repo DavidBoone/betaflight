@@ -251,6 +251,8 @@
 #define USE_SERIALRX_SUMD       // Graupner Hott protocol
 #endif
 
+#define USE_SERIAL_PASSTHROUGH
+
 #define USE_CLI
 #define USE_TASK_STATISTICS
 #define USE_IMU_CALC
@@ -295,6 +297,8 @@
 #define USE_SPEKTRUM_CMS_TELEMETRY
 #define USE_PIN_PULL_UP_DOWN
 #endif
+
+#define USE_BATTERY_VOLTAGE_SAG_COMPENSATION
 
 #if ((TARGET_FLASH_SIZE > 256) || (FEATURE_CUT_LEVEL < 12))
 #define USE_CMS
@@ -426,5 +430,4 @@
 #define USE_SERIALRX_SRXL2     // Spektrum SRXL2 protocol
 #define USE_INTERPOLATED_SP
 #define USE_CUSTOM_BOX_NAMES
-#define USE_BATTERY_VOLTAGE_SAG_COMPENSATION
 #endif
